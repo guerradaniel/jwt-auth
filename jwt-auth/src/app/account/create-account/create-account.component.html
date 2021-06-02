@@ -1,1 +1,24 @@
-<p>create-account works!</p>
+<h2 class="text-center">Criar minha conta</h2>
+
+<form class="mt-5" [formGroup]="formulario" (submit)="onSubmit()">
+
+    <div class="form-group">
+        <label>Nome</label>
+        <input class="form-control" type="text" formControlName="nome" placeholder="Coloque seu nome e sobrenome"> 
+    </div>
+
+    <div class="form-group">
+        <label>E-mail</label>
+        <input class="form-control" type="e-mail" formControlName="email" placeholder="Insira seu melhor e-mail" >
+    </div>
+
+    <div class="fomr-group">
+        <label>Senha</label>
+        <input class="form-control" type="password" formControlName="senha" placeholder="Insira uma senha forte">
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block mt-3">Criar Conta</button>
+    <div class="text-center mt-3">
+        Já possui cadastro? Clique para <a [routerLink]="['/login']">Entrar</a>
+    </div>
+</form>
