@@ -5,16 +5,20 @@
     <div class="form-group">
         <label>Nome</label>
         <input class="form-control" type="text" formControlName="nome" placeholder="Coloque seu nome e sobrenome"> 
+        <app-mensagem mensagem="Nome obrigatório" *ngIf="formulario.get('nome')?.errors?.required && formulario.get('nome')?.touched"></app-mensagem>
     </div>
 
     <div class="form-group">
         <label>E-mail</label>
         <input class="form-control" type="e-mail" formControlName="email" placeholder="Insira seu melhor e-mail" >
+        <app-mensagem mensagem="E-mail obrigatório" *ngIf="formulario.get('email')?.errors?.required && formulario.get('email')?.touched"></app-mensagem>
+
     </div>
 
     <div class="fomr-group">
         <label>Senha</label>
         <input class="form-control" type="password" formControlName="senha" placeholder="Insira uma senha forte">
+        <app-mensagem mensagem="Senha obrigatória" *ngIf="formulario.get('senha')?.errors?.required && formulario.get('senha')?.touched"></app-mensagem>
     </div>
 
     <button type="submit" class="btn btn-primary btn-block mt-3">Criar Conta</button>

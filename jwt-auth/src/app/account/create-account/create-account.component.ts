@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-account',
@@ -14,21 +14,20 @@ export class CreateAccountComponent implements OnInit {
     private form: FormBuilder
   ) { }
 
-
   ngOnInit() {
     this.createForm()
   }
 
   createForm(){
     this.formulario = this.form.group({
-      name: '',
-      email: '',
-      senha: ''
+      nome: ['', [Validators.required, Validators.maxLength(12)]],
+      email: ['', [Validators.required]],
+      senha: ['', Validators.required]
     })
   }
 
   onSubmit(){
-    
+
   }
 
 }

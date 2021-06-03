@@ -12,6 +12,8 @@ import { LoginComponent } from './account/login/login.component';
 import { CreateAccountComponent } from './account/create-account/create-account.component';
 import { HomeComponent } from './layout/home/home.component';
 import { AuthenticationComponent } from './layout/authentication/authentication.component';
+import { MensagemComponent } from './componentes/mensagem/mensagem/mensagem.component';
+import { MensagemModule } from './componentes/mensagem/mensagem/mensagem.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MensagemModule
   ],
   providers: [],
   bootstrap: [AppComponent]

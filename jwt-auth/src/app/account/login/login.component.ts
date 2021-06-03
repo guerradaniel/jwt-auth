@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AccountService } from '../shared/account.service';
 
@@ -25,13 +25,12 @@ export class LoginComponent implements OnInit {
 
   createForm(){
     this.formulario = this.form.group({
-      email: '',
-      senha: ''
+      email: ['', Validators.required, Validators.email],
+      senha: ['', Validators.required]
     })
   }
 
   async onSubmit(){
-    
     try{
       const login = this.formulario.value
       const result = await this.account.login(login)
